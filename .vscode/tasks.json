@@ -1,0 +1,104 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "AI: Review arquivo atual",
+      "type": "shell",
+      "command": "ai review ${file}",
+      "presentation": {
+        "panel": "shared",
+        "reveal": "always",
+        "clear": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "AI: Chat (prompt livre)",
+      "type": "shell",
+      "command": "ai chat \"${input:prompt}\"",
+      "presentation": {
+        "panel": "shared",
+        "reveal": "always",
+        "clear": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "AI: Chat com arquivo atual",
+      "type": "shell",
+      "command": "ai chat \"${input:prompt}\" --file ${file}",
+      "presentation": {
+        "panel": "shared",
+        "reveal": "always",
+        "clear": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "AI: Fix arquivo atual",
+      "type": "shell",
+      "command": "ai fix ${file} \"${input:problema}\"",
+      "presentation": {
+        "panel": "shared",
+        "reveal": "always",
+        "clear": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "AI: Fix e aplicar no arquivo atual",
+      "type": "shell",
+      "command": "ai fix ${file} \"${input:problema}\" --apply",
+      "presentation": {
+        "panel": "shared",
+        "reveal": "always",
+        "clear": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "AI: Criar arquivo de código",
+      "type": "shell",
+      "command": "ai create \"${input:descricao}\" --out ${input:caminho}",
+      "presentation": {
+        "panel": "shared",
+        "reveal": "always",
+        "clear": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "AI: Listar agentes",
+      "type": "shell",
+      "command": "ai agents",
+      "presentation": {
+        "panel": "shared",
+        "reveal": "always",
+        "clear": true
+      },
+      "problemMatcher": []
+    }
+  ],
+  "inputs": [
+    {
+      "id": "prompt",
+      "type": "promptString",
+      "description": "Mensagem para o agente"
+    },
+    {
+      "id": "problema",
+      "type": "promptString",
+      "description": "Descreva o problema a ser corrigido"
+    },
+    {
+      "id": "descricao",
+      "type": "promptString",
+      "description": "O que criar?"
+    },
+    {
+      "id": "caminho",
+      "type": "promptString",
+      "description": "Caminho do arquivo a criar (ex: src/hooks/useDebounce.js)"
+    }
+  ]
+}
